@@ -46,4 +46,33 @@
     </style>
 </head>
 <body>
-<h1>Проверка високосного
+<h1>Проверка високосного года</h1>
+
+<p class="hint">
+    Введите один год или несколько годов через запятую. Для демонстрационных проверок поле можно оставить пустым.
+</p>
+
+<form method="post">
+    <label for="mode">Режим проверки:</label>
+    <br>
+
+    <select id="mode" name="mode">
+        <option value="one">Проверить один год</option>
+        <option value="multiple">Проверить несколько годов</option>
+        <option value="next">Показать следующие 5 високосных годов</option>
+        <option value="demo">Запустить демонстрационные проверки</option>
+    </select>
+
+    <br>
+
+    <label for="year">Год или список годов:</label>
+    <input id="year" name="year" type="text" placeholder="Например: 2000 или 2000, 1900, 2024, 2023">
+
+    <button type="submit">Выполнить проверку</button>
+</form>
+
+{% if result %}
+<div class="result">{{ result }}</div>
+{% endif %}
+</body>
+</html>
