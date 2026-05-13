@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка високосного года</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 760px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .hint {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        input, select, button {
+            font-size: 16px;
+            padding: 8px;
+            margin: 6px 0;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 14px;
+            border: 1px solid #ccc;
+            background: #f7f7f7;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+<h1>Проверка високосного года</h1>
+
+<p class="hint">
+    Введите один год или несколько годов через запятую. Для демонстрационных проверок поле можно оставить пустым.
+</p>
+
+<form method="post">
+    <label for="mode">Режим проверки:</label>
+    <br>
+    <select id="mode" name="mode">
+        <option value="one" {% if mode == "one" %}selected{% endif %}>Проверить один год</option>
+        <option value="multiple" {% if mode == "multiple" %}selected{% endif %}>Проверить несколько годов</option>
+        <option value="next" {% if mode == "next" %}selected{% endif %}>Показать следующие 5 високосных годов</option>
+        <option value="demo" {% if mode == "demo" %}selected{% endif %}>Запустить демонстрационные проверки</option>
+    </select>
+
+    <br>
+
+    <label for="year">Год или список годов:</label>
+    <input id="year" name="year" type="text" placeholder="Например: 2000 или 2000, 1900, 2024, 2023">
+
+    <button type="submit">Выполнить проверку</button>
+</form>
+
+{% if result %}
+<div class="result">{{ result }}</div>
+{% endif %}
+</body>
+</html>
