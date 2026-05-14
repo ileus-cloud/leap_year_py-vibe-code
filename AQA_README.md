@@ -359,7 +359,7 @@ Python: run leap_gui.py
 2. Убедиться, что Project SDK:
 
 ```text
-C:\Users\iol\IdeaProjects\leap_year_py-vibe-code\.venv\Scripts\python.exe
+.\.venv\Scripts\python.exe
 ```
 
 3. В верхнем правом выпадающем списке Run Configurations выбрать нужную конфигурацию.
@@ -466,5 +466,4 @@ tests/test_input_validation.py
 - e2e-запуск проходит отдельной командой `.\.venv\Scripts\python.exe -m pytest tests\test_web_e2e.py -m e2e --browser chromium -o addopts="" -s`;
 - в IntelliJ IDEA доступны Run Configurations для запуска всех основных тестовых слоев и приложений;
 - итоговая документация по автотестам зафиксирована в `AQA_README.md`.
-
 
